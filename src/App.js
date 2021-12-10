@@ -136,8 +136,7 @@ export default function App() {
         onPointerEnter={(e) => {
           set(e.instanceId); 
           setData(jsonMass[e.instanceId])
-          setPx(e.distance)
-          setPy(e.offsetY)
+          
         
         }}
         onPointerLeave={(e) => {
