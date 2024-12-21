@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, Suspense,useMemo, useLayoutEffect} from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import {OrbitControls, Html, } from '@react-three/drei'
+import 'dotenv/config.js';
 
 
 import * as THREE from 'three'
@@ -17,11 +18,11 @@ export default function App() {
     console.log("total mass")
     
     
-    const response = await fetch('https://ancientdust.fra1.cdn.digitaloceanspaces.com/mass.json', {
+    const response = await fetch(`${process.env.API}/mass.json`, {
       method: 'GET',
       headers: {
         'accept': 'application/json',
-        'Access-Control-Allow-Origin': 'https://ancientdust.fra1.cdn.digitaloceanspaces.com/',
+        'Access-Control-Allow-Origin': process.env.API,
         'mode':'no-cors'
       }
     });
